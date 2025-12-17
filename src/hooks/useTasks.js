@@ -6,7 +6,7 @@ export function useTasks() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    loadTasks();
+    loadTasks();// Carga las tareas cuando se monta el componente
   }, []);
 
   const loadTasks = async () => {

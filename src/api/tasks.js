@@ -1,3 +1,4 @@
+// URL base de la API, variable de entorno
 const API_URL = import.meta.env.VITE_API_URL + "/tasks";
 
 export const getTasks = async () => {

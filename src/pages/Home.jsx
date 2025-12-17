@@ -3,6 +3,7 @@ import TaskList from "../components/TaskList";
 import { useTasks } from "../hooks/useTasks";
 import { useState } from "react";
 
+// Extrae del hook los estados y funciones para manejar tareas
 export default function Home() {
   const {
     tasks,
@@ -13,12 +14,16 @@ export default function Home() {
     updateTask,
     loadTasks,
   } = useTasks();
+
+  // Estado para almacenar la tarea que se está editando
   const [editingTask, setEditingTask] = useState(null);
 
+  // Inicia la edición de una tarea
   const handleEdit = (task) => {
     setEditingTask(task);
   };
 
+  // Guarda una tarea nueva o actualiza una existente
   const handleSave = async (taskData) => {
     if (editingTask) {
       await updateTask(editingTask._id, taskData);
